@@ -19,6 +19,7 @@ class Measurement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата измерения')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата изменения')
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='measurements', verbose_name='Датчик')
+    picture = models.ImageField(blank=False, null=True)
 
     class Meta:
         verbose_name = "Измерение"
